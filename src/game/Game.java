@@ -21,11 +21,15 @@ public class Game {
         ground.setPosition(new Vec2(0f, -11.5f));
         ground.setFillColor(Color.BLUE);
 
+        Shape shape2 = new BoxShape(5, 0.5f);
+        StaticBody platform = new StaticBody(world, shape2);
+        platform.setPosition(new Vec2(5f, -9.5f));
+        platform.setFillColor(Color.BLUE);
+
         //Create Character
         //Character character = new Character(world, 1,2,7,-4,true);
 
         Player player = new Player(world,1,2);
-        player.setGravityScale(2);
 
         UserView view = new UserView(world, 800, 600);
         view.setGridResolution(1);

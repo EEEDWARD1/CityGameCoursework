@@ -10,8 +10,10 @@ import java.awt.event.KeyEvent;
 
 public class Player extends Walker{
     private JFrame frame;
+    private float gravityScale = 10;
     public Player(World world, float halfWidth, float halfHeight) {
         super(world, new BoxShape(halfWidth, halfHeight));
+        setGravityScale(gravityScale);
     }
 
     public void setControlFrame(JFrame frame){
