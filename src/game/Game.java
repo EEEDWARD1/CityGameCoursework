@@ -29,7 +29,7 @@ public class Game {
         //Create Character
         //Character character = new Character(world, 1,2,7,-4,true);
 
-        Player player = new Player(world,1,2);
+        Player player = new Player(world,1,2, 120);
 
         UserView view = new UserView(world, 800, 600);
         view.setGridResolution(1);
@@ -37,13 +37,14 @@ public class Game {
         final JFrame frame = new JFrame("Coursework Game");
         frame.add(view);
 
+        player.setControlFrame(frame);
+
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationByPlatform(true);
         frame.setResizable(false);
         frame.pack();
         frame.setVisible(true);
 
-        player.setControlFrame(frame);
         world.start();
     }
 

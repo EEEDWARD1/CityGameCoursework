@@ -8,9 +8,30 @@ import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-public class Player extends Walker{
+public class Player extends Character{
     private JFrame frame;
-    private float gravityScale = 10;
+
+    public Player(World world, float halfWidth, float halfHeight, int maxHealth){
+        super(world, new BoxShape(halfWidth,halfHeight));
+        setHealth(maxHealth);
+        setMaxHealth(maxHealth);
+    }
+
+    public void setControlFrame(JFrame frame){
+        this.frame = frame;
+        frame.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                int key = e.getKeyCode();
+                if (key == KeyEvent.VK_SPACE){
+                    jump(10);
+                }
+            }
+        });
+    }
+
+    /*private JFrame frame;
+    private float gravityScale = 1;
     public Player(World world, float halfWidth, float halfHeight) {
         super(world, new BoxShape(halfWidth, halfHeight));
         setGravityScale(gravityScale);
@@ -44,5 +65,5 @@ public class Player extends Walker{
                 }
             }
         });
-    }
+    }*/
 }
