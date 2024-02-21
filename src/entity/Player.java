@@ -1,20 +1,16 @@
-package game;
+package entity;
 
 import city.cs.engine.*;
-import org.jbox2d.common.Vec2;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-public class Player extends Character{
+public class Player extends Entity {
     private JFrame frame;
 
     public Player(World world, float halfWidth, float halfHeight, int maxHealth){
         super(world, new BoxShape(halfWidth,halfHeight));
-        setHealth(maxHealth);
-        setMaxHealth(maxHealth);
     }
 
     public void setControlFrame(JFrame frame){
@@ -25,10 +21,31 @@ public class Player extends Character{
                 int key = e.getKeyCode();
                 if (key == KeyEvent.VK_SPACE){
                     jump(10);
+                    System.out.println("space");;
+                }
+                if (key == KeyEvent.VK_A){
+                    //startWalking(-20f);
+                    startWalkingF(-10);
+                    System.out.println("left");
+                }
+                if (key == KeyEvent.VK_D){
+                    //startWalking(20f);
+                    startWalkingF(10);
+                    System.out.println("Right");
+                }
+            }
+            @Override
+            public void keyReleased(KeyEvent e) {
+                int key = e.getKeyCode();
+                if (key == KeyEvent.VK_A || key == KeyEvent.VK_D) {
+                    System.out.println("hello world");
+                    stopWalkingF(0);
+                    // Stop walking when left or right arrow is released
                 }
             }
         });
     }
+}
 
     /*private JFrame frame;
     private float gravityScale = 1;
@@ -66,4 +83,3 @@ public class Player extends Character{
             }
         });
     }*/
-}

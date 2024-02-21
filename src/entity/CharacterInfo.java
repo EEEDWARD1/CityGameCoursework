@@ -1,17 +1,17 @@
-package game;
+package entity;
 
 import city.cs.engine.Shape;
 import city.cs.engine.Walker;
 import city.cs.engine.World;
 
-public class Character extends Walker {
+public class CharacterInfo extends Walker {
 
     private int maxHealth;
     private int health;
 
     //private Weapon weapon;
 
-    protected Character(World world, Shape shape) {
+    protected CharacterInfo(World world, Shape shape) {
         super(world, shape);
     }
 
@@ -55,5 +55,12 @@ public class Character extends Walker {
     Weapon damage inheritance!!!!!
     .......................
     */
+    public void jump(float speed){
+
+    }
+
+    //Friction
+
+    //Force Movement
 
 }

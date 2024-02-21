@@ -1,12 +1,11 @@
 package game;
 
+import entity.Player;
 import city.cs.engine.*;
 import city.cs.engine.Shape;
 import org.jbox2d.common.Vec2;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 
 public class Game {
 
