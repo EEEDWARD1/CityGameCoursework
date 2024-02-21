@@ -20,7 +20,7 @@ public class Player extends Entity {
             public void keyPressed(KeyEvent e) {
                 int key = e.getKeyCode();
                 if (key == KeyEvent.VK_SPACE){
-                    jump(10);
+                    jumpF(20000);
                     System.out.println("space");;
                 }
                 if (key == KeyEvent.VK_A){
